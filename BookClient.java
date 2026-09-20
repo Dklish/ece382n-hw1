@@ -37,7 +37,6 @@ public class BookClient {
             switch (tokens[0]) {
                 case "set-mode":
                     useTcp = tokens[1].equals("t");
-                    break;
                 case "begin-loan":
                 case "end-loan":
                 case "get-loans":
