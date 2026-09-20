@@ -139,7 +139,7 @@ public class BookServer {
         for (Loan loan : new TreeMap<>(activeLoans).values()) {
             if (loan.userName.equals(user)) {
                 if (sb.length() > 0) sb.append("\n");
-                sb.append(loan.loanId).append(", \"").append(loan.bookName).append("\"");
+                sb.append(loan.loanId).append(" \"").append(loan.bookName).append("\"");
             }
         }
         return sb.length() == 0 ? "No record found for " + user : sb.toString();
@@ -149,7 +149,7 @@ public class BookServer {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<String, Integer> e : inventory.entrySet()) {
             if (sb.length() > 0) sb.append("\n");
-            sb.append("\"").append(e.getKey()).append("\", ").append(e.getValue());
+            sb.append("\"").append(e.getKey()).append("\" ").append(e.getValue());
         }
         return sb.toString();
     }
